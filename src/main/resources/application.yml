@@ -1,0 +1,13 @@
+---
+
+spring:
+  jpa:
+    show-sql: true
+    hibernate.ddl-auto: none
+    database: MYSQL
+
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost/univdb?autoReconnect=true&useSSL=false
+    username: univadmin
+    password: univadmin
