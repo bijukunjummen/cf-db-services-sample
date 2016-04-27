@@ -5,6 +5,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Entity
@@ -31,11 +33,12 @@ public class Course {
 	@JoinColumn(name = "teacher_id")
 	private Teacher teacher;
 
+	@ManyToMany(fetch = FetchType.LAZY, mappedBy = "courses")
+	private List<Student> students = new ArrayList<>();
 
 	public Teacher getTeacher() {
 		return this.teacher;
 	}
-
 
 	public void setTeacher(Teacher teacher) {
 		this.teacher = teacher;
@@ -76,6 +79,14 @@ public class Course {
 
 	public void setVersion(Integer version) {
 		this.version = version;
+	}
+
+	public List<Student> getStudents() {
+		return this.students;
+	}
+
+	public void setStudents(List<Student> students) {
+		this.students = students;
 	}
 
 	@Override

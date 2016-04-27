@@ -7,7 +7,8 @@ create table students (
 
 create table student_course (
     student_id bigint not null,
-    course_id bigint not null) ;
+    course_id bigint not null,
+    primary key(course_id, student_id)) ;
 
 alter table student_course add constraint student_to_course_fk1 foreign key (course_id) references courses (course_id);
 
