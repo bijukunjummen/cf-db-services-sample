@@ -1,0 +1,11 @@
+---
+applications:
+  - name: cf-db-services-sample-auto
+    path: target/cf-db-services-sample-auto-1.0.0.RELEASE.jar
+    memory: 512M
+    env:
+      JAVA_OPTS: -Djava.security.egd=file:/dev/./urandom
+    services:
+      - mydb
+
+buildpack: https://github.com/cloudfoundry/java-buildpack.git

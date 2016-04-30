@@ -1,0 +1,15 @@
+---
+applications:
+  - name: cf-db-services-sample-connector
+    path: target/cf-db-services-sample-connector-1.0.0.RELEASE.jar
+    memory: 512M
+    env:
+      JAVA_OPTS: -Djava.security.egd=file:/dev/./urandom
+      SPRING_PROFILES_ACTIVE: cloud
+    services:
+      - mydb
+
+buildpack: https://github.com/cloudfoundry/java-buildpack.git
+
+env:
+    JBP_CONFIG_SPRING_AUTO_RECONFIGURATION: '{enabled: false}'

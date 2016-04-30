@@ -1,0 +1,3 @@
+This is a simple Spring Boot based app to demonstrate different ways of connecting to a datastore when deploying to Cloud Foundry.
+
+The simplest approach is to do nothing and let Cloud Foundry's Java Buildpack handle the details.

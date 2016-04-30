@@ -1,0 +1,7 @@
+---
+
+spring:
+  datasource:
+    url: ${vcap.services.mydb.credentials.jdbcUrl}
+    username: ${vcap.services.mydb.credentials.username}
+    password: ${vcap.services.mydb.credentials.password}
