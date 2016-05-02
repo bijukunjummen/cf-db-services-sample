@@ -1,3 +1,14 @@
-This is a simple Spring Boot based app to demonstrate different ways of connecting to a datastore when deploying to Cloud Foundry.
+This is a simple Spring Boot based app to demonstrate different ways of connecting to a service or a datastore when
+deploying to Cloud Foundry.
 
+== Let Java Buildpack Autoreconfiguration handle it
 The simplest approach is to do nothing and let Cloud Foundry's Java Buildpack handle the details.
+Cloud Foundry's Java Buildpack injects a library called the https://github.com/cloudfoundry/java-buildpack-auto-reconfiguration[Java Buildpack Auto Reconfiguration] into the runtime deployable
+which reconfigures the service connectivity appropriately.
+
+== Use Java Environment properties
+Spring Boot exposes the VCAP_SERVICES properties which is in the form of a JSON into a more consumable format - as simple environment properties. These properties can be used for configuring
+the connectivity to the service
+
+== Use Spring Cloud Connector
+http://cloud.spring.io/spring-cloud-connectors/[Spring Cloud Connector] provides the most advanced configuration for enabling connectivity to an external service.
