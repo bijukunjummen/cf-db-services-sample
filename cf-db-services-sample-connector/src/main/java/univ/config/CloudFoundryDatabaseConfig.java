@@ -10,7 +10,7 @@ import javax.sql.DataSource;
 
 @Configuration
 @Profile("cloud")
-class CloudFoundryDatabaseConfig {
+public  class CloudFoundryDatabaseConfig {
 
     @Bean
     public Cloud cloud() {

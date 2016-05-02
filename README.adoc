@@ -12,3 +12,26 @@ the connectivity to the service
 
 == Use Spring Cloud Connector
 http://cloud.spring.io/spring-cloud-connectors/[Spring Cloud Connector] provides the most advanced configuration for enabling connectivity to an external service.
+
+Any of the versions of the application can be brought up by the following steps:
+
+=== Installing and deploying a MYSql on Mac OSX
+[source]
+----
+brew install mysql
+mysql.server start
+mysql -u root
+
+CREATE USER 'springpong'@'localhost' IDENTIFIED BY 'springpong';
+CREATE DATABASE pong_matcher_spring_development;
+GRANT ALL ON pong_matcher_spring_development.* TO 'springpong'@'localhost';
+----
+
+=== Start the application
+[source]
+----
+mvn spring-boot:run
+----
+
+=== Check if the application has started up
+Try the endpoint available here - http://localhost:8080/courses
